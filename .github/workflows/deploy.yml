@@ -51,7 +51,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
-        GT_TOKEN: ${{ secrets.GT_TOKEN }}
+        github_token: ${{ secrets.GT_TOKEN }}
         publish_dir: ./build
         publish_branch: gh-pages
         cname: tic-tac-toe.lavan.dev 
