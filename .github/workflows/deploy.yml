@@ -16,7 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        token: ${{ secrets.DEPLOY_TOKEN }}
+        repository: lavan-fs/Tic-Tac-Toe-Game-react
+        ssh-strict: true
+        persist-credentials: true
+        clean: true
+        token: ${{ secrets.GT_TOKEN }}
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -41,13 +45,13 @@ jobs:
         folder: build
         branch: gh-pages
         clean: true
-        token: ${{ secrets.DEPLOY_TOKEN }}
+        token: ${{ secrets.GT_TOKEN }}
 
     - name: Deploy to Domain
       if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.DEPLOY_TOKEN }}
+        GT_TOKEN: ${{ secrets.GT_TOKEN }}
         publish_dir: ./build
         publish_branch: gh-pages
         cname: tic-tac-toe.lavan.dev 
