@@ -108,8 +108,3 @@ tic-tac-toe/
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-
-- React.js team for the amazing framework
-- TypeScript team for the type safety
-- All contributors who help improve this game
