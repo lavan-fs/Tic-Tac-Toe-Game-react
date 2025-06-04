@@ -1,0 +1,130 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--dark-bg);
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.neon-box {
+  border: 2px solid var(--neon-blue);
+  animation: neonPulse 2s infinite;
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.neon-input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--neon-blue);
+  color: var(--text-color);
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neon-input:focus {
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.neon-button {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.neon-button:hover:not(:disabled) {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.neon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auth-error {
+  color: var(--neon-pink);
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: errorShake 0.5s;
+}
+
+.auth-success {
+  color: #00ff00;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px #00ff00;
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0% { opacity: 0.8; text-shadow: 0 0 10px #00ff00; }
+  50% { opacity: 1; text-shadow: 0 0 20px #00ff00; }
+  100% { opacity: 0.8; text-shadow: 0 0 10px #00ff00; }
+}
+
+.auth-switch {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.switch-button {
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.switch-button:hover {
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--neon-blue);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--neon-blue);
+  }
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
